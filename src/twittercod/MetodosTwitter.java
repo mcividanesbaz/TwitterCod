@@ -20,12 +20,14 @@ public class MetodosTwitter {
     
     
     public MetodosTwitter() {
-        cb.setDebugEnabled(true)
+       /* cb.setDebugEnabled(true)
                 .setOAuthConsumerKey("nMhoaCVcMj3wvhte8QnkxqxLM")
                 .setOAuthConsumerSecret("JdTAcQt5IsH3QC5ukTXSFhewcUTYNOZtn7m0c89nPAgw6IofHJ")
                 .setOAuthAccessToken("867802357-I3SKAeEOeyDT1E6DG4BjanhI07c2GXCIKtuYBwW1")
                 .setOAuthAccessTokenSecret("8gKsSZF1QZ1T7de0EEqrr7yNO2hvM6NrMS1ld0BbrWu5p");
-        twitter = new TwitterFactory(cb.build()).getInstance();  
+        twitter = new TwitterFactory(cb.build()).getInstance();  */
+         twitter = new TwitterFactory("twitter4j.properties").getInstance();
+         
     }
     
      public void TimeLine()throws TwitterException{        

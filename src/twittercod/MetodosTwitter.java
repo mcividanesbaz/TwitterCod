@@ -44,6 +44,12 @@ public class MetodosTwitter {
         System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
         }
        }  
-     
+    
+    public void Twittear(String tweet) throws TwitterException {
+
+        Status status = twitter.updateStatus(tweet);
+        System.out.println("Successfully updated the status to [" + status.getText() + "].");
+
+    }
      
 }

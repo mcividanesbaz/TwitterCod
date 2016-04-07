@@ -18,18 +18,22 @@ public class MetodosTwitter {
     ConfigurationBuilder cb = new ConfigurationBuilder();
     Twitter twitter;   
     
-    
+    /**
+     * Constructor, nos da acceso a nuestra cuenta en twitter.
+     */
     public MetodosTwitter() {
-       /* cb.setDebugEnabled(true)
+        cb.setDebugEnabled(true)
                 .setOAuthConsumerKey("nMhoaCVcMj3wvhte8QnkxqxLM")
                 .setOAuthConsumerSecret("JdTAcQt5IsH3QC5ukTXSFhewcUTYNOZtn7m0c89nPAgw6IofHJ")
                 .setOAuthAccessToken("867802357-I3SKAeEOeyDT1E6DG4BjanhI07c2GXCIKtuYBwW1")
                 .setOAuthAccessTokenSecret("8gKsSZF1QZ1T7de0EEqrr7yNO2hvM6NrMS1ld0BbrWu5p");
-        twitter = new TwitterFactory(cb.build()).getInstance();  */
-         twitter = new TwitterFactory("twitter4j.properties").getInstance();
+        twitter = new TwitterFactory(cb.build()).getInstance();  
+        // twitter = new TwitterFactory("twitter4j.properties").getInstance();
          
     }
-    
+    /**
+     * Nos muestra nuestro timeLine
+     */
      public void TimeLine()throws TwitterException{        
         List<Status> statuses = twitter.getHomeTimeline();
             System.out.println("Showing home timeline.");
@@ -38,6 +42,10 @@ public class MetodosTwitter {
                         + status.getText());
             }
 }
+     
+      /**
+     * Busca tweets con el texto que introducimos
+     */
     public void ShowString(String busqueda)throws TwitterException{
           
         Query query = new Query(busqueda);
@@ -47,6 +55,10 @@ public class MetodosTwitter {
         }
        }  
     
+    
+     /**
+     * Crea y publica un tweet
+     */
     public void Twittear(String tweet) throws TwitterException {
 
         Status status = twitter.updateStatus(tweet);
